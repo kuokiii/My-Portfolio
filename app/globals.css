@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fff8e7;
+  --foreground: #000000;
+  --border: #000000;
+  --shadow-offset: 4px;
+  --pink: #ff90e8;
+  --yellow: #ffc900;
+  --blue: #90e9ff;
+  --red: #ff5757;
+  --purple: #c5a1ff;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #ffffff;
+  --border: #ffffff;
+  --shadow-offset: 4px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Inter, sans-serif;
+}
+
+.neu-border {
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border);
+}
+
+.neu-button {
+  border: 3px solid var(--border);
+  box-shadow: 6px 6px 0 var(--border);
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.neu-button:hover {
+  box-shadow: 3px 3px 0 var(--border);
+  transform: translate(3px, 3px);
+}
+
+/* Add these new highlight styles with different colors */
+.pink-highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.pink-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--pink);
+  z-index: -1;
+}
+
+.yellow-highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.yellow-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--yellow);
+  z-index: -1;
+}
+
+.blue-highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.blue-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--blue);
+  z-index: -1;
+}
+
+.green-highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.green-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #7cf072;
+  z-index: -1;
+}
+
+.purple-highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.purple-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--purple);
+  z-index: -1;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Add proper neu-brutalism portfolio item styling */
+.portfolio-item-container {
+  position: relative;
+}
+
+.portfolio-item-container::before,
+.portfolio-item-container::after,
+.portfolio-item-container > *::before,
+.portfolio-item-container > *::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+}
+
+.portfolio-item-content {
+  border: 3px solid black;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top-right corner extension */
+.portfolio-item-container::before {
+  width: 5px;
+  height: 5px;
+  top: -3px;
+  right: -3px;
+}
+
+/* Bottom-left corner extension */
+.portfolio-item-container::after {
+  width: 5px;
+  height: 5px;
+  bottom: -3px;
+  left: -3px;
+}
+
+.portfolio-item {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.testimonial-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 3rem;
+  line-height: 1;
+  opacity: 0.1;
+}
+
+/* Improve the hand-drawn border style */
+.hand-drawn-border {
+  position: relative;
+  border: 3px solid black;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
+}
+
+.hand-drawn-border::before,
+.hand-drawn-border::after,
+.hand-drawn-border > *::before,
+.hand-drawn-border > *::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+}
+
+/* Top-right corner extension */
+.hand-drawn-border::before {
+  width: 5px;
+  height: 5px;
+  top: -3px;
+  right: -3px;
+}
+
+/* Bottom-left corner extension */
+.hand-drawn-border::after {
+  width: 5px;
+  height: 5px;
+  bottom: -3px;
+  left: -3px;
+}
+
+/* Top-left corner extension */
+.hand-drawn-border > *::before {
+  width: 5px;
+  height: 5px;
+  top: -3px;
+  left: -3px;
+}
+
+/* Bottom-right corner extension */
+.hand-drawn-border > *::after {
+  width: 5px;
+  height: 5px;
+  bottom: -3px;
+  right: -3px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 3px solid black;
+}
+
+.service-item {
+  padding: 1.5rem;
+  border: 1px solid black;
+  position: relative;
+}
+
+.service-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: black;
+}
+
+.service-item:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: black;
+}
+
+/* Add a handwritten squiggle element */
+.squiggle {
+  position: relative;
+}
+
+.squiggle::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+}
+
+/* Add a handwritten circle element */
+.circle-doodle {
+  position: relative;
+}
+
+.circle-doodle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px dashed black;
+  border-radius: 50%;
+}
+
+/* Handwritten name style */
+.handwritten-name {
+  font-family: Caveat, Comic Sans MS, cursive;
+  font-size: 1.75rem;
+  font-weight: bold;
+  transform: rotate(-2deg);
+  display: inline-block;
+}
+
+.handwritten-name::first-letter {
+  font-size: 2.25rem;
+  font-weight: 900;
+}
+
