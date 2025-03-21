@@ -1,3 +1,5 @@
+⭐ 🌟 ✨ 
+ℹ️ 📢
 ### Neu Brutalism Portfolio
 
 A modern, responsive portfolio website featuring a Neu Brutalism design aesthetic. This portfolio showcases projects, skills, and services in a visually engaging way with playful design elements.
